@@ -130,7 +130,10 @@ def render_text(result: ScanResult, color: bool = False, max_locations: int = 8,
         f"  ·  {result.advisory_count} advisories ({reg})  ·  today {result.today.isoformat()}"
     )
     out.append("")
-    if not result.findings:
+    if not result.findings and not result.files_scanned and not result.packages_seen:
+        out.append(st("  No files were scanned, so nothing was checked. ", "33")
+                   + "Check the path, and whether a .sunsetignore (here or in a parent folder) excludes it.")
+    elif not result.findings:
         out.append(st("  Nothing in this repo matches a known sunset. ", "32") + "Nice.")
     for f in result.findings:
         adv = f.advisory

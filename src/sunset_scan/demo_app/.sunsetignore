@@ -1,0 +1,3 @@
+# Empty on purpose. The repository root .sunsetignore skips this demo app so that
+# scanning sunset-scan itself stays quiet; this file makes an explicit scan of the
+# demo app (as the CI self-test does) use no ignore rules.

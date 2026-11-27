@@ -30,6 +30,24 @@ def test_clean_repo_exits_zero(tmp_path, capsys):
     assert "Nothing in this repo matches" in capsys.readouterr().out
 
 
+def test_zero_files_is_not_reported_as_clean(tmp_path, capsys):
+    # A parent .sunsetignore in the git repo that excludes the scanned folder must not read as "all clear".
+    (tmp_path / ".git").mkdir()
+    (tmp_path / ".sunsetignore").write_text("app/\n")
+    (tmp_path / "app").mkdir()
+    (tmp_path / "app" / "a.py").write_text('MODEL = "gpt-4o-mini"\n')
+    assert main([str(tmp_path / "app"), "--color", "never", *TODAY]) == 0
+    out = capsys.readouterr().out
+    assert "No files were scanned" in out and "Nothing in this repo matches" not in out
+
+
+def test_demo_app_self_scan_ignores_repo_root_ignore(capsys):
+    # The CI self-test scans the bundled demo app inside this git repo; the root .sunsetignore skips it,
+    # so the demo app carries its own empty .sunsetignore.
+    assert main([str(REPO / "src" / "sunset_scan" / "demo_app"), "--color", "never", "--no-fail", *TODAY]) == 0
+    assert "gpt-4o-mini" in capsys.readouterr().out
+
+
 def test_fail_within_and_strict(tmp_path, capsys):
     (tmp_path / "a.py").write_text('MODEL = "gpt-4o-mini"  # 48 days left on 2026-11-27\n')
     assert main([str(tmp_path), *TODAY]) == 0
