@@ -1,0 +1,203 @@
+# Load-bearing frontend packages that block upgrades (enzyme, ESLint plugins) and React 19 removals.
+# Upgrade blockers report as BROKEN only when the blocking version is already installed.
+schema_version: 1
+advisories:
+  - id: npm/enzyme
+    title: Enzyme is unmaintained and has no official adapter for React 17 or later
+    vendor: enzymejs
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: '@testing-library/react'
+    summary: >-
+      Last release 3.11.0 (2019-12-20). Official adapters stop at React 16; React 19 also removed
+      react-test-renderer/shallow and most of react-dom/test-utils. Effective date is the React 19
+      release.
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://github.com/enzymejs/enzyme
+    references: [https://react.dev/blog/2024/04/25/react-19-upgrade-guide]
+    last_verified: 2026-11-27
+    affected:
+      - type: npm
+        ids: [enzyme]
+  - id: npm/enzyme-adapter-react-16
+    title: enzyme-adapter-react-16 only supports React 16
+    vendor: enzymejs
+    kind: upgrade-blocker
+    effective: 2020-10-20
+    replacement: '@testing-library/react'
+    summary: 'peerDependencies: react ^16.0.0-0. Effective date is the React 17 release.'
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=17.0.0'
+    source: https://registry.npmjs.org/enzyme-adapter-react-16/latest
+    last_verified: 2026-11-27
+    affected:
+      - type: npm
+        ids: [enzyme-adapter-react-16]
+  - id: npm/wojtekmaj-enzyme-adapter-react-17
+    title: '@wojtekmaj/enzyme-adapter-react-17 only supports React 17'
+    vendor: community
+    kind: upgrade-blocker
+    effective: 2022-03-29
+    replacement: '@testing-library/react'
+    summary: >-
+      peerDependencies: react ^17.0.0-0; last release 0.8.0 (2022-11-09). Effective date is the
+      React 18 release.
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=18.0.0'
+    source: https://registry.npmjs.org/@wojtekmaj/enzyme-adapter-react-17/latest
+    last_verified: 2026-11-27
+    affected:
+      - type: npm
+        ids: ['@wojtekmaj/enzyme-adapter-react-17']
+  - id: npm/eslint-plugin-react-eslint-10
+    title: eslint-plugin-react does not support ESLint 10
+    vendor: jsx-eslint
+    kind: upgrade-blocker
+    effective: 2026-02-06
+    replacement: Stay on ESLint 9 until eslint-plugin-react declares ESLint 10 support
+    summary: >-
+      Latest release 7.37.5 (2025-04-03) declares peerDependencies eslint ^3 || ... || ^9.7.
+      ESLint 10.0.0 shipped 2026-02-06. Re-check when a newer eslint-plugin-react is published.
+    blocks:
+      ecosystem: npm
+      package: eslint
+      versions: '>=10.0.0'
+    source: https://registry.npmjs.org/eslint-plugin-react/latest
+    last_verified: 2026-11-27
+    affected:
+      - type: npm
+        ids: [eslint-plugin-react]
+        versions: '<=7.37.5'
+  - id: npm/eslint-plugin-jsx-a11y-eslint-10
+    title: eslint-plugin-jsx-a11y does not support ESLint 10
+    vendor: jsx-eslint
+    kind: upgrade-blocker
+    effective: 2026-02-06
+    replacement: Stay on ESLint 9 until eslint-plugin-jsx-a11y declares ESLint 10 support
+    summary: Latest release 6.10.2 (2024-10-26) declares peerDependencies eslint ^3 || ... || ^9.
+    blocks:
+      ecosystem: npm
+      package: eslint
+      versions: '>=10.0.0'
+    source: https://registry.npmjs.org/eslint-plugin-jsx-a11y/latest
+    last_verified: 2026-11-27
+    affected:
+      - type: npm
+        ids: [eslint-plugin-jsx-a11y]
+        versions: '<=6.10.2'
+  - id: npm/eslint-plugin-import-eslint-10
+    title: eslint-plugin-import does not support ESLint 10
+    vendor: import-js
+    kind: upgrade-blocker
+    effective: 2026-02-06
+    replacement: Stay on ESLint 9, or evaluate eslint-plugin-import-x
+    summary: Latest release 2.32.0 (2025-06-20) declares peerDependencies eslint ^2 || ... || ^9.
+    blocks:
+      ecosystem: npm
+      package: eslint
+      versions: '>=10.0.0'
+    source: https://registry.npmjs.org/eslint-plugin-import/latest
+    last_verified: 2026-11-27
+    affected:
+      - type: npm
+        ids: [eslint-plugin-import]
+        versions: '<=2.32.0'
+  - id: react/react-19-legacy-root-apis
+    title: React 19 removed ReactDOM.render, ReactDOM.hydrate and unmountComponentAtNode
+    vendor: React
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: createRoot / hydrateRoot from react-dom/client, and root.unmount()
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: ReactDOM\.(?:render|hydrate)\(
+      - type: literal
+        ids: [unmountComponentAtNode]
+  - id: react/react-19-find-dom-node
+    title: React 19 removed ReactDOM.findDOMNode
+    vendor: React
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: DOM refs
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [findDOMNode]
+  - id: react/react-19-test-utils
+    title: React 19 removed react-dom/test-utils (except act)
+    vendor: React
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: import { act } from 'react'; use @testing-library/react for the rest
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [react-dom/test-utils]
+  - id: react/react-19-shallow-renderer
+    title: React 19 removed react-test-renderer/shallow
+    vendor: React
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: react-shallow-renderer, or better @testing-library/react
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [react-test-renderer/shallow]
+  - id: react/react-19-legacy-context
+    title: React 19 removed legacy context (contextTypes / getChildContext)
+    vendor: React
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: contextType / React.createContext
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [getChildContext, childContextTypes]
+  - id: react/react-19-create-factory
+    title: React 19 removed React.createFactory
+    vendor: React
+    kind: upgrade-blocker
+    effective: 2024-12-05
+    replacement: JSX or React.createElement
+    blocks:
+      ecosystem: npm
+      package: react
+      versions: '>=19.0.0'
+    source: https://react.dev/blog/2024/04/25/react-19-upgrade-guide
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: React\.createFactory\(

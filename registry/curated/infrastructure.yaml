@@ -1,0 +1,49 @@
+# Archived or retired infrastructure: ingress-nginx, MinIO community edition.
+# Verified 2026-11-27.
+schema_version: 1
+advisories:
+  - id: kubernetes/ingress-nginx
+    title: Ingress NGINX (kubernetes/ingress-nginx) retired and archived
+    vendor: Kubernetes SIG Network
+    kind: unmaintained
+    effective: 2026-03-24
+    announced: 2025-11-11
+    replacement: >-
+      A Gateway API implementation (the ingress2gateway tool helps translate Ingress objects)
+    summary: >-
+      Best-effort maintenance ended in March 2026 and the repo was archived on 2026-03-24: no more
+      releases, bug fixes or security patches. Existing deployments keep running and images/charts
+      stay downloadable.
+    source: https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/
+    references: [https://github.com/kubernetes/ingress-nginx]
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids:
+          - ingress-nginx/controller
+          - ingress-nginx/controller-chroot
+          - ingress-nginx/kube-webhook-certgen
+      - type: literal
+        ids: [kubernetes.github.io/ingress-nginx, nginx.ingress.kubernetes.io/]
+      - type: pattern
+        pattern: '^\s*(?:-\s*)?(?:chart|name):\s*["'']?(?:[\w.-]+/)?ingress-nginx["'']?\s*$'
+        flags: m
+        files: ['*.yaml', '*.yml']
+  - id: minio/community-edition
+    title: MinIO community edition repository archived (no more releases)
+    vendor: MinIO
+    kind: unmaintained
+    effective: 2026-04-25
+    replacement: >-
+      Another S3-compatible object store, or MinIO's AIStor editions; if you stay, build from
+      source and track CVEs yourself
+    summary: >-
+      The README says the community edition is no longer maintained and is distributed as source
+      only; legacy binaries and images get no updates. The repo was archived on 2026-04-25.
+    source: https://github.com/minio/minio
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [minio/minio]
+      - type: literal
+        ids: [charts.min.io]

@@ -1,0 +1,49 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "sunset-scan"
+version = "0.1.0"
+description = "Advisories for things that stop: find retiring AI models, expiring API versions, archived infrastructure and paywalled images in your repo, with a days-left countdown."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "larcx-idea contributors" }]
+requires-python = ">=3.11"
+dependencies = []
+keywords = ["deprecation", "sunset", "end-of-life", "llm", "openai", "graph-api", "helm", "ci", "sarif"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Environment :: Console",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Software Development :: Quality Assurance",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.scripts]
+sunset-scan = "sunset_scan.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/larcx-idea/sunset-scan"
+Issues = "https://github.com/larcx-idea/sunset-scan/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+sunset_scan = [
+  "data/*.json",
+  "demo_app/*",
+  "demo_app/.env.example",
+  "demo_app/.github/workflows/*",
+  "demo_app/src/*",
+  "demo_app/reports/*",
+  "demo_app/deploy/helm/*",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

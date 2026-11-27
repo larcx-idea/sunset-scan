@@ -1,0 +1,426 @@
+# Meta Graph API and Marketing API version expiries and all-version changes.
+# Sources: https://developers.facebook.com/docs/graph-api/changelog/versions and
+# https://developers.facebook.com/docs/graph-api/changelog/version26.0 (verified 2026-11-27).
+# Version expiries are kind: behavior-change, not shutdown: Meta upgrades calls to an expired
+# version to a newer one (the Marketing API says they "may fail or be upgraded"), so the
+# report says CHANGED rather than BROKEN once the date has passed.
+schema_version: 1
+advisories:
+  - id: meta/graph-api-v25.0
+    title: Meta Graph API v25.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2028-07-29
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v25.0 was released 2026-02-18. After the expiration date, calls pinned to v25.0 no longer
+      get v25.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v25\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v25\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v25\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v24.0
+    title: Meta Graph API v24.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2028-02-18
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v24.0 was released 2025-10-08. After the expiration date, calls pinned to v24.0 no longer
+      get v24.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v24\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v24\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v24\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v23.0
+    title: Meta Graph API v23.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2027-10-08
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v23.0 was released 2025-05-29. After the expiration date, calls pinned to v23.0 no longer
+      get v23.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v23\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v23\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v23\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v22.0
+    title: Meta Graph API v22.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2027-05-20
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v22.0 was released 2025-01-21. After the expiration date, calls pinned to v22.0 no longer
+      get v22.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v22\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v22\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v22\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v21.0
+    title: Meta Graph API v21.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2027-01-21
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v21.0 was released 2024-10-02. After the expiration date, calls pinned to v21.0 no longer
+      get v21.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v21\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v21\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v21\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v20.0
+    title: Meta Graph API v20.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-09-24
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v20.0 was released 2024-05-21. After the expiration date, calls pinned to v20.0 no longer
+      get v20.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v20\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v20\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v20\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v19.0
+    title: Meta Graph API v19.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-05-21
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v19.0 was released 2024-01-23. After the expiration date, calls pinned to v19.0 no longer
+      get v19.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v19\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v19\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v19\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v18.0
+    title: Meta Graph API v18.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-01-26
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v18.0 was released 2023-09-12. After the expiration date, calls pinned to v18.0 no longer
+      get v18.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v18\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v18\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v18\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v17.0
+    title: Meta Graph API v17.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2025-09-12
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v17.0 was released 2023-05-23. After the expiration date, calls pinned to v17.0 no longer
+      get v17.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v17\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v17\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v17\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-v16.0
+    title: Meta Graph API v16.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2025-05-14
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: >-
+      v16.0 was released 2023-02-02. After the expiration date, calls pinned to v16.0 no longer
+      get v16.0 behaviour; test against a newer version first. Covers Graph, Instagram and
+      WhatsApp Cloud API URLs.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v16\.0(?![0-9])
+      - type: pattern
+        pattern: '["''`]v16\.0["''`]'
+        context: [facebook, instagram, whatsapp, graph_api, graph-api, graphapi, meta_api, fb_api]
+      - type: pattern
+        pattern: (?:graph|meta|fb|facebook)[a-z_]*version["']?\s*[=:]\s*["']?v16\.0(?![0-9])
+        flags: i
+  - id: meta/graph-api-legacy-versions
+    title: Meta Graph API v2.x to v15.0 expiration
+    vendor: Meta
+    kind: behavior-change
+    effective: 2024-11-20
+    replacement: A current Graph API version (v26.0 was released 2026-07-29)
+    summary: v15.0 was the last of these to expire (2024-11-20).
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.(?:facebook|instagram)\.com/v(?:[2-9]|1[0-5])\.[0-9]+(?![0-9])
+  - id: meta/marketing-api-v24.0
+    title: Meta Marketing API v24.0 expiration (facebook-business SDK 24.x)
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-10-06
+    replacement: >-
+      Marketing API v25.0 or newer (facebook-business / facebook-nodejs-business-sdk 25.x+)
+    summary: >-
+      The Marketing API expires versions sooner than the Graph API: v24.0 (released 2025-10-08)
+      expires 2026-10-06 for ads endpoints. The Business SDKs track the API version in their major
+      version. After that date, Meta says calls
+      to the expired version may fail or be upgraded to the next available version.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pypi
+        ids: [facebook-business]
+        versions: '>=24.0.0, <25.0.0'
+      - type: npm
+        ids: [facebook-nodejs-business-sdk]
+        versions: '>=24.0.0, <25.0.0'
+      - type: pattern
+        pattern: graph\.facebook\.com/v24\.0/act_
+      - type: pattern
+        pattern: api_version\s*=\s*["']v24\.0["']
+        context: [facebookadsapi, facebook_business, adaccount]
+  - id: meta/marketing-api-v23.0
+    title: Meta Marketing API v23.0 expiration (facebook-business SDK 23.x)
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-06-09
+    replacement: >-
+      Marketing API v25.0 or newer (facebook-business / facebook-nodejs-business-sdk 25.x+)
+    summary: >-
+      The Marketing API expires versions sooner than the Graph API: v23.0 (released 2025-05-29)
+      expires 2026-06-09 for ads endpoints. The Business SDKs track the API version in their major
+      version. After that date, Meta says calls
+      to the expired version may fail or be upgraded to the next available version.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pypi
+        ids: [facebook-business]
+        versions: '>=23.0.0, <24.0.0'
+      - type: npm
+        ids: [facebook-nodejs-business-sdk]
+        versions: '>=23.0.0, <24.0.0'
+      - type: pattern
+        pattern: graph\.facebook\.com/v23\.0/act_
+      - type: pattern
+        pattern: api_version\s*=\s*["']v23\.0["']
+        context: [facebookadsapi, facebook_business, adaccount]
+  - id: meta/marketing-api-v22.0
+    title: Meta Marketing API v22.0 expiration (facebook-business SDK 22.x)
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-02-19
+    replacement: >-
+      Marketing API v25.0 or newer (facebook-business / facebook-nodejs-business-sdk 25.x+)
+    summary: >-
+      The Marketing API expires versions sooner than the Graph API: v22.0 (released 2025-01-21)
+      expires 2026-02-19 for ads endpoints. The Business SDKs track the API version in their major
+      version. After that date, Meta says calls
+      to the expired version may fail or be upgraded to the next available version.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pypi
+        ids: [facebook-business]
+        versions: '>=22.0.0, <23.0.0'
+      - type: npm
+        ids: [facebook-nodejs-business-sdk]
+        versions: '>=22.0.0, <23.0.0'
+      - type: pattern
+        pattern: graph\.facebook\.com/v22\.0/act_
+      - type: pattern
+        pattern: api_version\s*=\s*["']v22\.0["']
+        context: [facebookadsapi, facebook_business, adaccount]
+  - id: meta/marketing-api-v21.0
+    title: Meta Marketing API v21.0 expiration (facebook-business SDK 21.x)
+    vendor: Meta
+    kind: behavior-change
+    effective: 2025-09-09
+    replacement: >-
+      Marketing API v25.0 or newer (facebook-business / facebook-nodejs-business-sdk 25.x+)
+    summary: >-
+      The Marketing API expires versions sooner than the Graph API: v21.0 (released 2024-10-02)
+      expires 2025-09-09 for ads endpoints. The Business SDKs track the API version in their major
+      version. After that date, Meta says calls
+      to the expired version may fail or be upgraded to the next available version.
+    source: https://developers.facebook.com/docs/graph-api/changelog/versions
+    last_verified: 2026-11-27
+    affected:
+      - type: pypi
+        ids: [facebook-business]
+        versions: '>=21.0.0, <22.0.0'
+      - type: npm
+        ids: [facebook-nodejs-business-sdk]
+        versions: '>=21.0.0, <22.0.0'
+      - type: pattern
+        pattern: graph\.facebook\.com/v21\.0/act_
+      - type: pattern
+        pattern: api_version\s*=\s*["']v21\.0["']
+        context: [facebookadsapi, facebook_business, adaccount]
+  - id: meta/commerce-order-management-api
+    title: Meta Commerce Order Management API removed from all Graph API versions
+    vendor: Meta
+    kind: shutdown
+    effective: 2026-10-27
+    announced: 2026-07-29
+    replacement: >-
+      None: Checkout on Facebook and Instagram Shops was sunset and Meta offers no replacement API
+    summary: >-
+      Blocked on v26.0+ from 2026-07-29 and removed from every remaining version on 2026-10-27 (47
+      endpoints, including /{page-id}/commerce_orders and /{commerce-order-id}/items, shipments,
+      refunds).
+    source: https://developers.facebook.com/docs/graph-api/changelog/version26.0
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [commerce_orders, commerce_returns]
+      - type: pattern
+        pattern: '\b(?:buyer_details|tracking_info|fulfillment_locations)\b'
+        context: [graph.facebook.com, facebook]
+  - id: meta/graph-legacy-protocol-features
+    title: 'Meta Graph API: root ?ids= requests and date_format now return errors on all versions'
+    vendor: Meta
+    kind: removed
+    effective: 2026-10-27
+    announced: 2026-07-29
+    replacement: >-
+      Per-object requests or supported batching; use the default date format and convert in code
+    summary: >-
+      Also on all versions: pretty and debug are ignored and ETag/If-None-Match caching is
+      removed.
+    source: https://developers.facebook.com/docs/graph-api/changelog/version26.0
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: graph\.facebook\.com/(?:v[0-9]+\.[0-9]+/?)?\?ids=
+      - type: pattern
+        pattern: '[?&]date_format=|["'']date_format["'']'
+        context: [graph.facebook.com, facebook]
+  - id: meta/marketing-delivery-estimate-fields
+    title: >-
+      Meta Marketing API: delivery_estimate fields daily_outcomes_curve, budget_guardrail,
+      estimate_dau removed
+    vendor: Meta
+    kind: removed
+    effective: 2026-10-27
+    announced: 2026-07-29
+    replacement: None; remove these fields from delivery_estimate requests
+    source: https://developers.facebook.com/docs/graph-api/changelog/version26.0
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [daily_outcomes_curve, budget_guardrail, estimate_dau]
+  - id: meta/marketing-web-only-destination
+    title: 'Meta Marketing API: applink_treatment=web_only rejected for Website and App campaigns'
+    vendor: Meta
+    kind: behavior-change
+    effective: 2026-10-27
+    announced: 2026-07-29
+    replacement: Automatic destination selection or a compatible manual destination
+    source: https://developers.facebook.com/docs/graph-api/changelog/version26.0
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: applink_treatment["']?\s*[:=]\s*["']?web_only
+  - id: meta/marketing-messenger-stories-placement
+    title: 'Meta Marketing API: Messenger Stories placement removed'
+    vendor: Meta
+    kind: removed
+    effective: 2026-10-27
+    announced: 2026-07-29
+    replacement: Remove 'story' from messenger_positions (Advantage+ Placements need no change)
+    source: https://developers.facebook.com/docs/graph-api/changelog/version26.0
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: messenger_positions["']?\s*[:=]\s*\[[^\]]*["']story["']
+  - id: meta/marketing-poll-ads
+    title: 'Meta Marketing API: creating or updating poll ads fails'
+    vendor: Meta
+    kind: shutdown
+    effective: 2026-10-27
+    announced: 2026-07-29
+    replacement: None; remove poll_spec and poll interactive components from creatives
+    source: https://developers.facebook.com/docs/graph-api/changelog/version26.0
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [poll_spec]
+      - type: pattern
+        pattern: '["'']type["'']\s*:\s*["'']poll["'']'
+        context: [interactive_components_spec]

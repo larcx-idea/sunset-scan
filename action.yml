@@ -1,0 +1,122 @@
+name: Sunset Scan
+description: Find retiring AI models, expiring API versions, archived infrastructure and removed images in your repo, with days left.
+author: larcx-idea contributors
+branding:
+  icon: sunset
+  color: orange
+
+inputs:
+  path:
+    description: >-
+      Directory to scan. Its .sunsetignore is used, or else the nearest one above it in the
+      repository (paths in it are relative to the file's own directory).
+    default: "."
+  fail-within:
+    description: Fail the job if anything is broken or breaks within this many days. Use "never" to only report.
+    default: "30"
+  strict:
+    description: Let matches that appear only in comments or docs fail the job too.
+    default: "false"
+  issue:
+    description: "Open, update or close one tracking issue with the report (needs issues: write). Skipped on pull_request events."
+    default: "true"
+  issue-label:
+    description: Label used to find the tracking issue.
+    default: sunset-scan
+  issue-title:
+    description: Title for a new tracking issue.
+    default: "Sunset Scan: things in this repo that stop working"
+  sarif-file:
+    description: Also write a SARIF report here; upload it with github/codeql-action/upload-sarif.
+    default: ""
+  extra-args:
+    description: Extra sunset-scan arguments, e.g. "--exclude legacy/ --ignore-id openai/assistants-api".
+    default: ""
+  github-token:
+    description: Token used for the tracking issue.
+    default: ${{ github.token }}
+
+outputs:
+  findings:
+    description: Number of high-confidence findings.
+    value: ${{ steps.scan.outputs.findings }}
+  exit-code:
+    description: "sunset-scan exit code: 0 ok, 1 broken or due within fail-within."
+    value: ${{ steps.scan.outputs.exit-code }}
+  report:
+    description: Path to the Markdown report.
+    value: ${{ steps.scan.outputs.report }}
+
+runs:
+  using: composite
+  steps:
+    # update-environment: false keeps this Python off PATH, so the caller's later steps
+    # still get whatever `python` they set up themselves.
+    - uses: actions/setup-python@v5
+      id: py
+      with:
+        python-version: "3.12"
+        update-environment: false
+
+    - name: Install sunset-scan (isolated venv)
+      id: install
+      shell: bash
+      env:
+        PY: ${{ steps.py.outputs.python-path }}
+      run: |
+        venv="$RUNNER_TEMP/sunset-scan-venv"
+        "$PY" -m venv "$venv"
+        if [ -d "$venv/bin" ]; then bin="$venv/bin"; else bin="$venv/Scripts"; fi
+        "$bin/python" -m pip install --quiet --disable-pip-version-check "$GITHUB_ACTION_PATH"
+        echo "bin=$bin" >> "$GITHUB_OUTPUT"
+
+    - name: Scan
+      id: scan
+      shell: bash
+      env:
+        SCAN_PATH: ${{ inputs.path }}
+        FAIL_WITHIN: ${{ inputs.fail-within }}
+        STRICT: ${{ inputs.strict }}
+        SARIF: ${{ inputs.sarif-file }}
+        EXTRA: ${{ inputs.extra-args }}
+        BIN: ${{ steps.install.outputs.bin }}
+      run: |
+        set +e
+        args=("$SCAN_PATH" --color always
+              --report "markdown=$RUNNER_TEMP/sunset-scan.md"
+              --report "json=$RUNNER_TEMP/sunset-scan.json")
+        if [ "$FAIL_WITHIN" = "never" ]; then args+=(--no-fail); else args+=(--fail-within "$FAIL_WITHIN"); fi
+        if [ "$STRICT" = "true" ]; then args+=(--strict); fi
+        if [ -n "$SARIF" ]; then args+=(--report "sarif=$SARIF"); fi
+        if [ -n "$EXTRA" ]; then read -r -a extra <<< "$EXTRA"; args+=("${extra[@]}"); fi
+        "$BIN/sunset-scan" scan "${args[@]}"
+        code=$?
+        set -e
+        if [ "$code" -ge 2 ]; then echo "::error::sunset-scan could not run (exit $code)"; exit "$code"; fi
+        cat "$RUNNER_TEMP/sunset-scan.md" >> "$GITHUB_STEP_SUMMARY"
+        findings=$("$BIN/python" -c "import json,sys; print(json.load(open(sys.argv[1]))['summary']['high_confidence'])" "$RUNNER_TEMP/sunset-scan.json")
+        {
+          echo "exit-code=$code"
+          echo "findings=$findings"
+          echo "report=$RUNNER_TEMP/sunset-scan.md"
+        } >> "$GITHUB_OUTPUT"
+
+    - name: Open or update the tracking issue
+      if: inputs.issue == 'true' && github.event_name != 'pull_request'
+      shell: bash
+      env:
+        GH_TOKEN: ${{ inputs.github-token }}
+        LABEL: ${{ inputs.issue-label }}
+        TITLE: ${{ inputs.issue-title }}
+        FINDINGS: ${{ steps.scan.outputs.findings }}
+        REPORT: ${{ steps.scan.outputs.report }}
+      run: bash "$GITHUB_ACTION_PATH/scripts/gha-issue.sh"
+
+    - name: Fail if something is broken or due soon
+      if: steps.scan.outputs.exit-code == '1'
+      shell: bash
+      env:
+        FAIL_WITHIN: ${{ inputs.fail-within }}
+      run: |
+        echo "::error::Sunset Scan found something broken or due within $FAIL_WITHIN days. See the job summary."
+        exit 1

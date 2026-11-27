@@ -1,0 +1,29 @@
+name: registry
+on:
+  pull_request:
+    paths: ["registry/**", "src/sunset_scan/data/**", "src/sunset_scan/registry.py"]
+  schedule:
+    - cron: "17 6 * * 1"
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - name: Schema, dates, ids, regexes and duplicate identifiers
+        run: sunset-scan registry validate registry --verbose
+      - name: Bundled JSON was rebuilt
+        run: sunset-scan registry build --check
+      - name: Every source link resolves
+        run: sunset-scan registry validate registry --check-links
+      - name: Curated dates vs endoflife.date (drift report)
+        run: |
+          cp -r registry "$RUNNER_TEMP/registry-check"
+          sunset-scan registry sync "$RUNNER_TEMP/registry-check" | tee -a "$GITHUB_STEP_SUMMARY"

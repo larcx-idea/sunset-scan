@@ -1,0 +1,6 @@
+services:
+  db:
+    image: bitnami/redis:7.2
+  storage:
+    image: quay.io/minio/minio:RELEASE.2025-04-22T22-12-26Z
+    command: server /data

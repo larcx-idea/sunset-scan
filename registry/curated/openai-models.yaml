@@ -1,0 +1,888 @@
+# OpenAI model shutdowns, transcribed from https://developers.openai.com/api/docs/deprecations
+# One advisory per row of OpenAI's table. Verified 2026-11-27.
+schema_version: 1
+advisories:
+  - id: openai/gpt-image-1-mini
+    title: 'OpenAI API shutdown: gpt-image-1-mini'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-01
+    announced: 2026-06-02
+    replacement: gpt-image-2.6-sunburst or gpt-image-2.6-flare
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-image-1-mini]
+  - id: openai/gpt-image-1.5
+    title: 'OpenAI API shutdown: gpt-image-1.5, gpt-image-1.5-2025-12-16'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-01
+    announced: 2026-06-02
+    replacement: gpt-image-2.6-sunburst or gpt-image-2.6-flare
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-image-1.5, gpt-image-1.5-2025-12-16]
+  - id: openai/chatgpt-image-latest
+    title: 'OpenAI API shutdown: chatgpt-image-latest'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-01
+    announced: 2026-06-02
+    replacement: gpt-image-2.6-sunburst or gpt-image-2.6-flare
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [chatgpt-image-latest]
+  - id: openai/gpt-5
+    title: 'OpenAI API shutdown: gpt-5, gpt-5-2025-08-07'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-11
+    announced: 2026-06-11
+    replacement: gpt-6.1-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5, gpt-5-2025-08-07]
+  - id: openai/gpt-5-mini
+    title: 'OpenAI API shutdown: gpt-5-mini, gpt-5-mini-2025-08-07'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-11
+    announced: 2026-06-11
+    replacement: gpt-6.1-terra
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5-mini, gpt-5-mini-2025-08-07]
+  - id: openai/gpt-5-nano
+    title: 'OpenAI API shutdown: gpt-5-nano, gpt-5-nano-2025-08-07'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-11
+    announced: 2026-06-11
+    replacement: gpt-6-luna
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5-nano, gpt-5-nano-2025-08-07]
+  - id: openai/gpt-5-pro
+    title: 'OpenAI API shutdown: gpt-5-pro, gpt-5-pro-2025-10-06'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-11
+    announced: 2026-06-11
+    replacement: 'gpt-6.1-sol with reasoning.mode: pro in the Responses API'
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5-pro, gpt-5-pro-2025-10-06]
+  - id: openai/o3
+    title: 'OpenAI API shutdown: o3-2025-04-16, o3'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-11
+    announced: 2026-06-11
+    replacement: gpt-6.1-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o3-2025-04-16]
+      - type: model
+        ids: [o3]
+        quoted: true
+  - id: openai/o3-pro
+    title: 'OpenAI API shutdown: o3-pro, o3-pro-2025-06-10'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-11
+    announced: 2026-06-11
+    replacement: 'gpt-6.1-sol with reasoning.mode: pro in the Responses API'
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o3-pro, o3-pro-2025-06-10]
+  - id: openai/tts-1
+    title: 'OpenAI API shutdown: tts-1'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-06
+    announced: 2026-10-01
+    replacement: gpt-realtime-2.1-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [tts-1]
+  - id: openai/tts-1-hd
+    title: 'OpenAI API shutdown: tts-1-hd'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-06
+    announced: 2026-10-01
+    replacement: gpt-realtime-2.1-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [tts-1-hd]
+  - id: openai/gpt-4o-mini-tts
+    title: >-
+      OpenAI API shutdown: gpt-4o-mini-tts, gpt-4o-mini-tts-2025-03-20, gpt-4o-mini-tts-2025-12-15
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-06
+    announced: 2026-10-01
+    replacement: gpt-realtime-2.1-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini-tts, gpt-4o-mini-tts-2025-03-20, gpt-4o-mini-tts-2025-12-15]
+  - id: openai/gpt-4o
+    title: 'OpenAI API shutdown: gpt-4o, gpt-4o-2024-08-06, gpt-4o-2024-11-20'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-14
+    announced: 2026-10-14
+    replacement: gpt-6-luna
+    summary: >-
+      OpenAI lists the GPT-4o snapshots gpt-4o-2024-08-06 and gpt-4o-2024-11-20; the gpt-4o alias
+      resolves to them. (gpt-4o-2024-05-13 already shut down on 2026-10-23.) Fine-tuned versions
+      follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o, gpt-4o-2024-08-06, gpt-4o-2024-11-20]
+  - id: openai/gpt-4o-mini
+    title: 'OpenAI API shutdown: gpt-4o-mini, gpt-4o-mini-2024-07-18'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-14
+    announced: 2026-10-14
+    replacement: gpt-6-luna
+    summary: >-
+      OpenAI lists gpt-4o-mini-2024-07-18 (GPT-4o mini); the gpt-4o-mini alias resolves to it.
+      Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini, gpt-4o-mini-2024-07-18]
+  - id: openai/gpt-4.1
+    title: 'OpenAI API shutdown: gpt-4.1, gpt-4.1-2025-04-14'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-14
+    announced: 2026-10-14
+    replacement: gpt-6-luna
+    summary: >-
+      OpenAI lists gpt-4.1-2025-04-14 (GPT-4.1); the gpt-4.1 alias resolves to it. Fine-tuned
+      versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4.1, gpt-4.1-2025-04-14]
+  - id: openai/gpt-4.1-mini
+    title: 'OpenAI API shutdown: gpt-4.1-mini, gpt-4.1-mini-2025-04-14'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-14
+    announced: 2026-10-14
+    replacement: gpt-6-luna
+    summary: >-
+      OpenAI lists gpt-4.1-mini-2025-04-14 (GPT-4.1 mini); the gpt-4.1-mini alias resolves to it.
+      Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4.1-mini, gpt-4.1-mini-2025-04-14]
+  - id: openai/gpt-realtime
+    title: 'OpenAI API shutdown: gpt-realtime, gpt-realtime-2025-08-28'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-realtime-2.1
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-realtime, gpt-realtime-2025-08-28]
+  - id: openai/gpt-audio
+    title: 'OpenAI API shutdown: gpt-audio, gpt-audio-2025-08-28'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-audio-1.5
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-audio, gpt-audio-2025-08-28]
+  - id: openai/gpt-4o-audio
+    title: 'OpenAI API shutdown: gpt-4o-audio'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-audio-1.5
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-audio]
+  - id: openai/gpt-4o-realtime
+    title: 'OpenAI API shutdown: gpt-4o-realtime'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-realtime-2.1
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-realtime]
+  - id: openai/gpt-realtime-mini
+    title: 'OpenAI API shutdown: gpt-realtime-mini, gpt-realtime-mini-2025-12-15'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-realtime-2.1-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-realtime-mini, gpt-realtime-mini-2025-12-15]
+  - id: openai/gpt-audio-mini
+    title: 'OpenAI API shutdown: gpt-audio-mini, gpt-audio-mini-2025-12-15'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-audio-1.5
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-audio-mini, gpt-audio-mini-2025-12-15]
+  - id: openai/gpt-4o-mini-realtime
+    title: 'OpenAI API shutdown: gpt-4o-mini-realtime'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-realtime-2.1-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini-realtime]
+  - id: openai/gpt-4o-mini-audio
+    title: 'OpenAI API shutdown: gpt-4o-mini-audio'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-audio-1.5
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini-audio]
+  - id: openai/gpt-4o-mini-transcribe-2025-03-20
+    title: 'OpenAI API shutdown: gpt-4o-mini-transcribe-2025-03-20'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-20
+    announced: 2026-07-20
+    replacement: gpt-4o-mini-transcribe-2025-12-15
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini-transcribe-2025-03-20]
+  - id: openai/gpt-5.5-cyber-preview
+    title: 'OpenAI API shutdown: gpt-5.5-cyber-preview'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-01
+    announced: 2026-11-05
+    replacement: The most capable cyber model available to your organization
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5.5-cyber-preview]
+  - id: openai/gpt-image-2
+    title: 'OpenAI API shutdown: gpt-image-2, gpt-image-2-2026-04-21'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-10
+    announced: 2026-11-10
+    replacement: gpt-image-2.6-sunburst or gpt-image-2.6-flare
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-image-2, gpt-image-2-2026-04-21]
+  - id: openai/whisper-1
+    title: 'OpenAI API shutdown: whisper-1'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-26
+    announced: 2026-08-26
+    replacement: gpt-live-transcribe or gpt-transcribe
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [whisper-1]
+  - id: openai/gpt-4o-transcribe
+    title: 'OpenAI API shutdown: gpt-4o-transcribe'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-26
+    announced: 2026-08-26
+    replacement: gpt-live-transcribe or gpt-transcribe
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-transcribe]
+  - id: openai/gpt-4o-mini-transcribe
+    title: 'OpenAI API shutdown: gpt-4o-mini-transcribe, gpt-4o-mini-transcribe-2025-12-15'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-26
+    announced: 2026-08-26
+    replacement: gpt-live-transcribe or gpt-transcribe
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini-transcribe, gpt-4o-mini-transcribe-2025-12-15]
+  - id: openai/gpt-4o-transcribe-diarize
+    title: 'OpenAI API shutdown: gpt-4o-transcribe-diarize'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-26
+    announced: 2026-08-26
+    replacement: gpt-live-transcribe or gpt-transcribe
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-transcribe-diarize]
+  - id: openai/gpt-5.3-codex
+    title: 'OpenAI API shutdown: gpt-5.3-codex'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-04-01
+    announced: 2026-10-01
+    replacement: gpt-6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5.3-codex]
+  - id: openai/gpt-5.4-nano
+    title: 'OpenAI API shutdown: gpt-5.4-nano, gpt-5.4-nano-2026-03-17'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-04-01
+    announced: 2026-10-01
+    replacement: gpt-6-luna
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5.4-nano, gpt-5.4-nano-2026-03-17]
+  - id: openai/gpt-5.1
+    title: 'OpenAI API shutdown: gpt-5.1, gpt-5.1-2025-11-13'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-04-01
+    announced: 2026-10-01
+    replacement: gpt-6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5.1, gpt-5.1-2025-11-13]
+  - id: openai/gpt-3.5-turbo
+    title: 'OpenAI API shutdown: gpt-3.5-turbo, gpt-3.5-turbo-0125, gpt-3.5-turbo-completions'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-terra
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-3.5-turbo, gpt-3.5-turbo-0125, gpt-3.5-turbo-completions]
+  - id: openai/gpt-4
+    title: 'OpenAI API shutdown: gpt-4, gpt-4-0613, gpt-4-0613-completions and more'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4, gpt-4-0613, gpt-4-0613-completions, gpt-4-completions]
+  - id: openai/gpt-4-1106-preview
+    title: 'OpenAI API shutdown: gpt-4-1106-preview'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4-1106-preview]
+  - id: openai/gpt-4-turbo
+    title: 'OpenAI API shutdown: gpt-4-turbo, gpt-4-turbo-2024-04-09, gpt-4-turbo-completions'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4-turbo, gpt-4-turbo-2024-04-09, gpt-4-turbo-completions]
+  - id: openai/gpt-4.1-nano
+    title: 'OpenAI API shutdown: gpt-4.1-nano, gpt-4.1-nano-2025-04-14'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-luna
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4.1-nano, gpt-4.1-nano-2025-04-14]
+  - id: openai/gpt-4o-2024-05-13
+    title: 'OpenAI API shutdown: gpt-4o-2024-05-13'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-2024-05-13]
+  - id: openai/gpt-image-1
+    title: 'OpenAI API shutdown: gpt-image-1'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-image-2.5-sunburst or gpt-image-2.5-flare
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-image-1]
+  - id: openai/o1
+    title: 'OpenAI API shutdown: o1-2024-12-17, o1'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o1-2024-12-17]
+      - type: model
+        ids: [o1]
+        quoted: true
+  - id: openai/o1-pro
+    title: 'OpenAI API shutdown: o1-pro, o1-pro-2025-03-19'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: 'gpt-5.6-sol with reasoning.mode: pro'
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o1-pro, o1-pro-2025-03-19]
+  - id: openai/o3-mini
+    title: 'OpenAI API shutdown: o3-mini, o3-mini-2025-01-31'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o3-mini, o3-mini-2025-01-31]
+  - id: openai/o4-mini
+    title: 'OpenAI API shutdown: o4-mini, o4-mini-2025-04-16, ft-o4-mini-2025-04-16'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-terra
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o4-mini, o4-mini-2025-04-16, ft-o4-mini-2025-04-16]
+  - id: openai/gpt-5.4-cyber
+    title: 'OpenAI API shutdown: gpt-5.4-cyber'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-10-01
+    announced: 2026-09-11
+    replacement: The most capable cyber model available to your organization
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5.4-cyber]
+  - id: openai/legacy-completions-models
+    title: 'OpenAI API shutdown: gpt-3.5-turbo-instruct, babbage-002, davinci-002 and more'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-09-28
+    announced: 2025-09-26
+    replacement: gpt-5.6-terra
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-3.5-turbo-instruct, babbage-002, davinci-002, gpt-3.5-turbo-1106]
+  - id: openai/chat-latest-5.2-5.3
+    title: 'OpenAI API shutdown: gpt-5.2-chat-latest, gpt-5.3-chat-latest'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-08-10
+    announced: 2026-05-08
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5.2-chat-latest, gpt-5.3-chat-latest]
+  - id: openai/computer-use-preview
+    title: 'OpenAI API shutdown: computer-use-preview, computer-use-preview-2025-03-11'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-07-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-terra
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [computer-use-preview, computer-use-preview-2025-03-11]
+  - id: openai/search-preview-models
+    title: >-
+      OpenAI API shutdown: gpt-4o-mini-search-preview-2025-03-11, gpt-4o-search-preview-2025-03-11
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-07-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-terra
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-mini-search-preview-2025-03-11, gpt-4o-search-preview-2025-03-11]
+  - id: openai/gpt-5-chat-latest
+    title: 'OpenAI API shutdown: gpt-5-chat-latest, gpt-5.1-chat-latest'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-07-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5-chat-latest, gpt-5.1-chat-latest]
+  - id: openai/codex-models-2026-07
+    title: 'OpenAI API shutdown: gpt-5-codex, gpt-5.1-codex, gpt-5.1-codex-max and more'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-07-23
+    announced: 2026-04-22
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-5-codex, gpt-5.1-codex, gpt-5.1-codex-max, gpt-5.2-codex]
+        replacement: gpt-5.6-sol
+      - type: model
+        ids: [gpt-5.1-codex-mini]
+        replacement: gpt-5.6-terra
+  - id: openai/audio-realtime-mini-2025-10-06
+    title: 'OpenAI API shutdown: gpt-audio-mini-2025-10-06, gpt-realtime-mini-2025-10-06'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-07-23
+    announced: 2026-04-22
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-audio-mini-2025-10-06]
+        replacement: gpt-audio-1.5
+      - type: model
+        ids: [gpt-realtime-mini-2025-10-06]
+        replacement: gpt-realtime-2.1-mini
+  - id: openai/deep-research-models
+    title: >-
+      OpenAI API shutdown: o3-deep-research, o3-deep-research-2025-06-26, o4-mini-deep-research
+      and more
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-07-23
+    announced: 2026-04-22
+    replacement: gpt-5.6-sol
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids:
+          - o3-deep-research
+          - o3-deep-research-2025-06-26
+          - o4-mini-deep-research
+          - o4-mini-deep-research-2025-06-26
+  - id: openai/dall-e
+    title: 'OpenAI API shutdown: dall-e-2, dall-e-3'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-05-12
+    replacement: gpt-image-2.6-sunburst or gpt-image-2.6-flare
+    summary: >-
+      OpenAI's original suggestions (gpt-image-2, gpt-image-1, gpt-image-1-mini) are themselves
+      deprecated now.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [dall-e-2, dall-e-3]
+  - id: openai/realtime-audio-previews-2026-05
+    title: >-
+      OpenAI API shutdown: gpt-4o-realtime-preview, gpt-4o-realtime-preview-2025-06-03,
+      gpt-4o-realtime-preview-2024-12-17 and more
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-05-07
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids:
+          - gpt-4o-realtime-preview
+          - gpt-4o-realtime-preview-2025-06-03
+          - gpt-4o-realtime-preview-2024-12-17
+        replacement: gpt-realtime-1.5
+      - type: model
+        ids: [gpt-4o-mini-realtime-preview]
+        replacement: gpt-realtime-mini
+      - type: model
+        ids: [gpt-4o-audio-preview]
+        replacement: gpt-audio-1.5
+      - type: model
+        ids: [gpt-4o-mini-audio-preview]
+        replacement: gpt-audio-mini
+  - id: openai/gpt-4-0314-and-0125-preview
+    title: 'OpenAI API shutdown: gpt-4-0314, gpt-4-0125-preview, gpt-4-turbo-preview and more'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-03-26
+    replacement: gpt-5, or gpt-4.1 for latency-sensitive tasks that don't need reasoning
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4-0314, gpt-4-0125-preview, gpt-4-turbo-preview, gpt-4-turbo-preview-completions]
+  - id: openai/chatgpt-4o-latest
+    title: 'OpenAI API shutdown: chatgpt-4o-latest'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-02-17
+    replacement: gpt-5.1-chat-latest
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [chatgpt-4o-latest]
+  - id: openai/codex-mini-latest
+    title: 'OpenAI API shutdown: codex-mini-latest'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-02-12
+    replacement: gpt-5-codex-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [codex-mini-latest]
+  - id: openai/text-moderation
+    title: >-
+      OpenAI API shutdown: text-moderation-007, text-moderation-stable, text-moderation-latest
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2025-10-27
+    replacement: omni-moderation-latest
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [text-moderation-007, text-moderation-stable, text-moderation-latest]
+  - id: openai/o1-mini
+    title: 'OpenAI API shutdown: o1-mini'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2025-10-27
+    replacement: o4-mini
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o1-mini]
+  - id: openai/realtime-audio-previews-2024-10-01
+    title: >-
+      OpenAI API shutdown: gpt-4o-realtime-preview-2024-10-01, gpt-4o-audio-preview-2024-10-01
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2025-10-10
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4o-realtime-preview-2024-10-01]
+        replacement: gpt-realtime-1.5
+      - type: model
+        ids: [gpt-4o-audio-preview-2024-10-01]
+        replacement: gpt-audio-1.5
+  - id: openai/o1-preview
+    title: 'OpenAI API shutdown: o1-preview'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2025-07-28
+    replacement: o3
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [o1-preview]
+  - id: openai/gpt-4.5-preview
+    title: 'OpenAI API shutdown: gpt-4.5-preview'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2025-07-14
+    replacement: gpt-4.1
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4.5-preview]
+  - id: openai/gpt-4-32k
+    title: 'OpenAI API shutdown: gpt-4-32k, gpt-4-32k-0613, gpt-4-32k-0314'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2025-06-06
+    replacement: gpt-4o
+    summary: Fine-tuned versions follow the same shutdown schedule as their base models.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [gpt-4-32k, gpt-4-32k-0613, gpt-4-32k-0314]

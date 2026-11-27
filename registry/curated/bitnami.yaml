@@ -1,0 +1,492 @@
+# Bitnami catalog change (docker.io/bitnami deleted 2025-09-29), per
+# https://github.com/bitnami/containers/issues/83267 (verified 2026-11-27).
+# bitnami/other-images is a catch-all; specific entries win on the same line.
+schema_version: 1
+advisories:
+  - id: bitnami/postgresql
+    title: Bitnami image bitnami/postgresql removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      postgres (Docker Official Image); bitnamilegacy/postgresql works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/postgresql]
+  - id: bitnami/postgresql-repmgr
+    title: Bitnami image bitnami/postgresql-repmgr removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/postgresql-repmgr works as an
+      unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/postgresql-repmgr]
+  - id: bitnami/pgpool
+    title: Bitnami image bitnami/pgpool removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/pgpool works as an unpatched
+      stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/pgpool]
+  - id: bitnami/mysql
+    title: Bitnami image bitnami/mysql removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: mysql (Docker Official Image); bitnamilegacy/mysql works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/mysql]
+  - id: bitnami/mariadb
+    title: Bitnami image bitnami/mariadb removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      mariadb (Docker Official Image); bitnamilegacy/mariadb works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/mariadb]
+  - id: bitnami/mariadb-galera
+    title: Bitnami image bitnami/mariadb-galera removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/mariadb-galera works as an
+      unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/mariadb-galera]
+  - id: bitnami/redis
+    title: Bitnami image bitnami/redis removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: redis or valkey/valkey; bitnamilegacy/redis works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/redis]
+  - id: bitnami/redis-cluster
+    title: Bitnami image bitnami/redis-cluster removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/redis-cluster works as an unpatched
+      stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/redis-cluster]
+  - id: bitnami/redis-sentinel
+    title: Bitnami image bitnami/redis-sentinel removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/redis-sentinel works as an
+      unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/redis-sentinel]
+  - id: bitnami/valkey
+    title: Bitnami image bitnami/valkey removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: valkey/valkey; bitnamilegacy/valkey works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/valkey]
+  - id: bitnami/mongodb
+    title: Bitnami image bitnami/mongodb removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      mongo (Docker Official Image); bitnamilegacy/mongodb works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/mongodb]
+  - id: bitnami/rabbitmq
+    title: Bitnami image bitnami/rabbitmq removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      rabbitmq (Docker Official Image); bitnamilegacy/rabbitmq works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/rabbitmq]
+  - id: bitnami/kafka
+    title: Bitnami image bitnami/kafka removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: apache/kafka; bitnamilegacy/kafka works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/kafka]
+  - id: bitnami/zookeeper
+    title: Bitnami image bitnami/zookeeper removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      zookeeper (Docker Official Image); bitnamilegacy/zookeeper works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/zookeeper]
+  - id: bitnami/nginx
+    title: Bitnami image bitnami/nginx removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: nginx (Docker Official Image); bitnamilegacy/nginx works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/nginx]
+  - id: bitnami/memcached
+    title: Bitnami image bitnami/memcached removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      memcached (Docker Official Image); bitnamilegacy/memcached works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/memcached]
+  - id: bitnami/elasticsearch
+    title: Bitnami image bitnami/elasticsearch removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      elasticsearch (official image); bitnamilegacy/elasticsearch works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/elasticsearch]
+  - id: bitnami/wordpress
+    title: Bitnami image bitnami/wordpress removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      wordpress (Docker Official Image); bitnamilegacy/wordpress works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/wordpress]
+  - id: bitnami/keycloak
+    title: Bitnami image bitnami/keycloak removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: quay.io/keycloak/keycloak; bitnamilegacy/keycloak works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/keycloak]
+  - id: bitnami/grafana
+    title: Bitnami image bitnami/grafana removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: grafana/grafana; bitnamilegacy/grafana works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/grafana]
+  - id: bitnami/prometheus
+    title: Bitnami image bitnami/prometheus removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: prom/prometheus; bitnamilegacy/prometheus works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/prometheus]
+  - id: bitnami/cassandra
+    title: Bitnami image bitnami/cassandra removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      cassandra (Docker Official Image); bitnamilegacy/cassandra works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/cassandra]
+  - id: bitnami/minio
+    title: Bitnami image bitnami/minio removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/minio works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/minio]
+  - id: bitnami/etcd
+    title: Bitnami image bitnami/etcd removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/etcd works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/etcd]
+  - id: bitnami/kubectl
+    title: Bitnami image bitnami/kubectl removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/kubectl works as an unpatched
+      stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/kubectl]
+  - id: bitnami/os-shell
+    title: Bitnami image bitnami/os-shell removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/os-shell works as an unpatched
+      stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/os-shell]
+  - id: bitnami/git
+    title: Bitnami image bitnami/git removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/git works as an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/git]
+  - id: bitnami/nginx-ingress-controller
+    title: Bitnami image bitnami/nginx-ingress-controller removed from the free catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/nginx-ingress-controller works as
+      an unpatched stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: image
+        ids: [bitnami/nginx-ingress-controller]
+  - id: bitnami/helm-charts
+    title: Bitnami Helm charts frozen and their default images removed
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      Override every image to bitnamilegacy/* as a stopgap, then move to an upstream chart or
+      operator
+    summary: >-
+      Packaged charts stay downloadable but get no updates, and they do not deploy out of the box
+      because their default images were removed (except images in the free bitnamisecure subset).
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids:
+          - charts.bitnami.com/bitnami
+          - registry-1.docker.io/bitnamicharts
+          - docker.io/bitnamicharts
+  - id: bitnami/other-images
+    title: Bitnami image removed from the free docker.io/bitnami catalog
+    vendor: Bitnami (Broadcom)
+    kind: removed
+    effective: 2025-09-29
+    replacement: >-
+      An upstream or otherwise maintained image; bitnamilegacy/<image> works as an unpatched
+      stopgap
+    summary: >-
+      On 2025-09-29 the free docker.io/bitnami catalog was deleted: versioned images moved to the
+      unmaintained docker.io/bitnamilegacy, and only a small hardened subset stayed free (latest
+      tag only) under bitnamisecure. Pulls of docker.io/bitnami/<image>:<version> fail. Sealed
+      Secrets, charts-syncer and minideb are unaffected.
+    source: https://github.com/bitnami/containers/issues/83267
+    last_verified: 2026-11-27
+    fallback: true
+    affected:
+      - type: pattern
+        pattern: >-
+          (?<![A-Za-z0-9_.\-/])(?:docker\.io/)?bitnami/(?!sealed-secrets|charts-syncer|minideb)[a-z0-9][a-z0-9._-]*

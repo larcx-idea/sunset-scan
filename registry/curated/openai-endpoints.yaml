@@ -1,0 +1,115 @@
+# OpenAI API endpoint and feature shutdowns, from https://developers.openai.com/api/docs/deprecations
+# Verified 2026-11-27.
+schema_version: 1
+advisories:
+  - id: openai/prompts-api
+    title: OpenAI /v1/prompts and reusable prompt objects shutdown
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-11-30
+    announced: 2026-06-03
+    replacement: Move prompt content into application code (OpenAI publishes a migration guide)
+    summary: >-
+      Responses API calls that reference a stored prompt (prompt: {id: 'pmpt_...'}) stop working.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [/v1/prompts]
+      - type: pattern
+        pattern: '\bpmpt_[A-Za-z0-9]{6,}'
+  - id: openai/evals-api
+    title: OpenAI Evals dashboard, API and graders go read-only
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-11-30
+    announced: 2026-06-03
+    replacement: >-
+      Promptfoo (OpenAI's suggestion); fine-tuning graders follow the fine-tuning timeline
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [/v1/evals, client.evals., openai.evals.]
+  - id: openai/fine-tuning-job-creation
+    title: OpenAI self-serve fine-tuning job creation ends
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-12-15
+    announced: 2026-05-07
+    replacement: >-
+      Existing fine-tuned models keep serving until their base model retires; plan for no new jobs
+    summary: >-
+      The date was moved up from 2027-01-06. Since 2026-07-02, orgs without fine-tuned inference
+      in the past 60 days already could not create jobs.
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [fine_tuning.jobs.create, fineTuning.jobs.create, /v1/fine_tuning/jobs]
+  - id: openai/eu-residency-priority-tier
+    title: 'OpenAI: service_tier fast/priority ends for GPT-5.2/5.4/5.4 mini with EU data residency'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-01-11
+    announced: 2026-11-18
+    replacement: 'service_tier: default with EU data residency, or the GPT-6.2 model family'
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: service_tier["']?\s*[:=]\s*["'](?:priority|fast)["']
+        context: [eu.api.openai.com]
+  - id: openai/audio-translations
+    title: OpenAI /v1/audio/translations shutdown
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2027-02-26
+    announced: 2026-08-26
+    replacement: /v1/realtime/translations
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [/v1/audio/translations, audio.translations.create]
+  - id: openai/videos-api-sora-2
+    title: OpenAI Videos API and Sora 2 models shutdown
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-09-24
+    announced: 2026-03-24
+    replacement: No one-to-one replacement
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: model
+        ids: [sora-2, sora-2-pro, sora-2-2025-10-06, sora-2-2025-12-08, sora-2-pro-2025-10-06]
+      - type: literal
+        ids: [/v1/videos, client.videos.]
+  - id: openai/assistants-api
+    title: OpenAI Assistants API shutdown
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-08-26
+    announced: 2025-08-26
+    replacement: Responses API and Conversations API (see OpenAI's migration guide)
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [/v1/assistants, /v1/threads, beta.assistants, beta.threads]
+      - type: pattern
+        pattern: assistants=v[12]\b
+        context: [openai]
+  - id: openai/realtime-beta-header
+    title: 'OpenAI Realtime beta header OpenAI-Beta: realtime=v1 removal'
+    vendor: OpenAI
+    kind: shutdown
+    effective: 2026-05-12
+    replacement: The GA Realtime API (OpenAI's beta-to-GA migration guide)
+    source: https://developers.openai.com/api/docs/deprecations
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: realtime=v1\b
+        context: [openai]

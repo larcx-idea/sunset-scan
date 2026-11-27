@@ -1,0 +1,8 @@
+# sunset-scan's own repository is full of retiring identifiers on purpose:
+# the registry, the bundled demo app and the test fixtures.
+registry/
+src/sunset_scan/data/
+src/sunset_scan/demo_app/
+tests/
+README.md
+CONTRIBUTING.md

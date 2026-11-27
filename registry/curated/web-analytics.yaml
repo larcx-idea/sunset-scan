@@ -1,0 +1,17 @@
+# Web analytics shutdowns. Verified 2026-11-27.
+schema_version: 1
+advisories:
+  - id: google/universal-analytics
+    title: Google Universal Analytics shutdown (UA- property IDs)
+    vendor: Google
+    kind: shutdown
+    effective: 2023-07-01
+    replacement: Google Analytics 4 (G- measurement IDs)
+    summary: >-
+      Standard properties stopped processing hits on 2023-07-01; 360 extensions ended and the
+      UI/API were removed starting 2024-07-01. Tags with UA- IDs send data nowhere.
+    source: https://support.google.com/analytics/answer/11583528
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: '["'']UA-[0-9]{4,10}-[0-9]{1,4}["'']'

@@ -1,0 +1,31 @@
+# Copy to .github/workflows/sunset-scan.yml in your repo.
+name: sunset-scan
+on:
+  schedule:
+    - cron: "0 9 * * 1" # every Monday
+  workflow_dispatch:
+  pull_request:
+permissions:
+  contents: read
+  issues: write          # tracking issue
+  security-events: write # SARIF upload to code scanning
+
+jobs:
+  sunset:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      # Pin to a release tag or commit SHA once one is published.
+      - uses: larcx-idea/sunset-scan@main
+        with:
+          fail-within: "30"
+          sarif-file: sunset.sarif
+      # Pull requests from forks get a read-only token and cannot upload SARIF.
+      - uses: github/codeql-action/upload-sarif@v3
+        if: >-
+          always() && hashFiles('sunset.sarif') != '' &&
+          (github.event_name != 'pull_request' ||
+           github.event.pull_request.head.repo.full_name == github.repository)
+        with:
+          sarif_file: sunset.sarif
+          category: sunset-scan

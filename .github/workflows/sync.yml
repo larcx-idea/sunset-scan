@@ -1,0 +1,37 @@
+name: sync-upstream
+# Imports model retirements from endoflife.date and LiteLLM and opens a PR when they change.
+# Needs "Allow GitHub Actions to create and approve pull requests" in the repo settings.
+on:
+  schedule:
+    - cron: "41 5 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -m pip install -e .
+      - run: sunset-scan registry sync registry | tee sync.txt
+      - run: |
+          sunset-scan registry validate registry
+          sunset-scan registry build
+      - name: Open a pull request if anything changed
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if git diff --quiet -- registry src/sunset_scan/data; then echo "No upstream changes."; exit 0; fi
+          branch="sync/upstream-$(date -u +%Y-%m-%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$branch"
+          git add registry src/sunset_scan/data
+          git commit -m "registry: sync endoflife.date and LiteLLM"
+          git push -u origin "$branch"
+          gh pr create --title "registry: sync upstream model retirements" --body-file sync.txt

@@ -1,0 +1,115 @@
+# GitHub Actions runner images, action versions and runtimes. Verified 2026-11-27.
+schema_version: 1
+advisories:
+  - id: github/runner-ubuntu-20.04
+    title: GitHub Actions ubuntu-20.04 runner image retirement
+    vendor: GitHub
+    kind: shutdown
+    effective: 2025-04-15
+    replacement: ubuntu-latest, ubuntu-22.04 or ubuntu-24.04
+    source: https://github.com/actions/runner-images/issues/11101
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [ubuntu-20.04]
+        files: [.github/workflows/*]
+  - id: github/runner-windows-2019
+    title: GitHub Actions windows-2019 runner image retirement
+    vendor: GitHub
+    kind: shutdown
+    effective: 2025-06-30
+    replacement: windows-2022 or windows-2025
+    source: https://github.com/actions/runner-images/issues/12045
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [windows-2019]
+        files: [.github/workflows/*]
+  - id: github/runner-macos-13
+    title: GitHub Actions macos-13 runner image retirement
+    vendor: GitHub
+    kind: shutdown
+    effective: 2025-12-04
+    replacement: macos-latest, macos-14 or macos-15 (macos-15-intel for x86_64)
+    summary: >-
+      Deprecation began 2025-09-22 with brownouts in November; the issue's target date is
+      2025-12-04 (its body also mentions 2025-12-08).
+    source: https://github.com/actions/runner-images/issues/13046
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [macos-13]
+        files: [.github/workflows/*]
+  - id: github/artifact-actions-v3
+    title: actions/upload-artifact and download-artifact v3 retirement
+    vendor: GitHub
+    kind: shutdown
+    effective: 2025-01-30
+    announced: 2024-04-16
+    replacement: actions/upload-artifact@v4 and actions/download-artifact@v4
+    source: >-
+      https://github.blog/changelog/2024-04-16-deprecation-notice-v3-of-the-artifact-actions/
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: actions/(?:upload|download)-artifact@v3(?![0-9])
+  - id: github/artifact-actions-v1-v2
+    title: actions/upload-artifact and download-artifact v1/v2 retirement
+    vendor: GitHub
+    kind: shutdown
+    effective: 2024-06-30
+    replacement: actions/upload-artifact@v4 and actions/download-artifact@v4
+    source: >-
+      https://github.blog/changelog/2024-04-16-deprecation-notice-v3-of-the-artifact-actions/
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: actions/(?:upload|download)-artifact@v[12](?![0-9])
+  - id: github/cache-v1-v2
+    title: actions/cache v1/v2 and @actions/cache < 4.0.0 retirement
+    vendor: GitHub
+    kind: shutdown
+    effective: 2025-03-01
+    announced: 2024-12-05
+    replacement: actions/cache@v4 (or a current v3/v4 release); @actions/cache 4.x
+    summary: >-
+      Workflows calling the retired versions fail after 2025-03-01 (GitHub Enterprise Server is
+      unaffected).
+    source: >-
+      https://github.blog/changelog/2024-12-05-notice-of-upcoming-releases-and-breaking-changes-for-github-actions/
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: actions/cache(?:/(?:save|restore))?@v[12](?![0-9])
+      - type: npm
+        ids: ['@actions/cache']
+        versions: '<4.0.0'
+  - id: github/node20-opt-out
+    title: 'GitHub Actions: Node 20 opt-out variable stops working'
+    vendor: GitHub
+    kind: behavior-change
+    effective: 2026-09-23
+    announced: 2025-09-19
+    replacement: Remove the opt-out and make sure your actions work on Node 24
+    summary: >-
+      Runners default to Node 24 from 2026-06-16; Node 20 is removed from runners on 2026-09-23.
+    source: >-
+      https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+    last_verified: 2026-11-27
+    affected:
+      - type: literal
+        ids: [ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION]
+  - id: github/node20-action-runtime
+    title: 'GitHub Actions removes Node 20: node20 JavaScript actions run on Node 24'
+    vendor: GitHub
+    kind: behavior-change
+    effective: 2026-09-23
+    announced: 2025-09-19
+    replacement: 'Declare using: node24 and test the action on Node 24'
+    source: >-
+      https://github.blog/changelog/2025-09-19-deprecation-of-node-20-on-github-actions-runners/
+    last_verified: 2026-11-27
+    affected:
+      - type: pattern
+        pattern: using:\s*["']?node20["']?
+        files: [action.yml, action.yaml]

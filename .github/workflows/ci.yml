@@ -1,0 +1,48 @@
+name: ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.11", "3.12", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: python -m pip install -e . pytest
+      - run: python -m pytest -q
+      - name: Registry is valid and the bundled JSON is up to date
+        run: |
+          sunset-scan registry validate registry
+          sunset-scan registry build --check
+      - name: Demo runs
+        run: sunset-scan demo --color always
+      - name: Dogfood (scan this repo)
+        run: sunset-scan . --strict --color always
+
+  action:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run the composite action on the bundled demo app
+        id: sunset
+        uses: ./
+        with:
+          path: src/sunset_scan/demo_app
+          fail-within: never
+          issue: "false"
+          sarif-file: demo.sarif
+      - name: Check outputs
+        env:
+          FINDINGS: ${{ steps.sunset.outputs.findings }}
+        run: |
+          test "$FINDINGS" -gt 0
+          python -c "import json; d=json.load(open('demo.sarif')); assert d['runs'][0]['results']"
